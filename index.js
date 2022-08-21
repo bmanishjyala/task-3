@@ -2,7 +2,10 @@
 
 // showing preview
 
-$("#todo").keyup(function () {
+$("#todo").keyup(function (key) {
+    if(key.keyCode==13){
+        $('#add_todo_btn').click()
+    }
     $("#typing").text($(this).val());
     if ($(this).val()) {
         $("#typing").prepend("Typing: ");
